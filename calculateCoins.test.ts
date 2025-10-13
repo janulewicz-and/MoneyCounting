@@ -6,7 +6,7 @@ import {
 } from "./calculateCoins";
 
 describe("calculateCoins", () => {
-  test("empty arr", () => {
+  test("empty array", () => {
     expect(calculateCoins([])).toEqual({
       1: { rolls: 0, rest: 0 },
       2: { rolls: 0, rest: 0 },
@@ -16,7 +16,7 @@ describe("calculateCoins", () => {
       50: { rolls: 0, rest: 0 },
     });
   });
-  test("1", () => {
+  test("each denomination once", () => {
     expect(calculateCoins([1, 2, 5, 10, 20, 50])).toEqual({
       1: { rolls: 0, rest: 1 },
       2: { rolls: 0, rest: 1 },
@@ -26,7 +26,7 @@ describe("calculateCoins", () => {
       50: { rolls: 0, rest: 1 },
     });
   });
-  test("2", () => {
+  test("full rolls without rest for each denomination", () => {
     expect(
       calculateCoins([
         ...Array(40).fill(1),
@@ -45,7 +45,7 @@ describe("calculateCoins", () => {
       50: { rolls: 1, rest: 0 },
     });
   });
-  test("3", () => {
+  test("one full roll with rest", () => {
     expect(
       calculateCoins([
         ...Array(43).fill(1),
@@ -64,7 +64,7 @@ describe("calculateCoins", () => {
       50: { rolls: 1, rest: 2 },
     });
   });
-  test("4", () => {
+  test("two full rolls with rest", () => {
     expect(
       calculateCoins([
         ...Array(85).fill(1),
@@ -83,7 +83,7 @@ describe("calculateCoins", () => {
       50: { rolls: 2, rest: 2 },
     });
   });
-  test("5", () => {
+  test("no full rolls, only rest", () => {
     expect(calculateCoins([1, 1, 2, 2, 2, 5, 10, 10, 20, 50, 50, 50])).toEqual({
       1: { rolls: 0, rest: 2 },
       2: { rolls: 0, rest: 3 },
