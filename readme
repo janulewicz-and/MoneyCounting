@@ -1,0 +1,50 @@
+### Description
+
+A simple TypeScript function that calculates how many **coin rolls** and **remaining coins** exist for each denomination.  
+This project simulates how a waiter counts coins at the end of a shift before exchanging them for notes.
+
+### Task
+
+At the end of the shift, the tip jar is full.  
+The waiter has to count and arrange the coins in rolls, go to the bank, and exchange them for notes.
+
+Each roll contains a fixed number of coins:
+
+| Denomination | Coins per roll |
+| ------------ | -------------- |
+| 1            | 40             |
+| 2            | 40             |
+| 5            | 30             |
+| 10           | 50             |
+| 20           | 20             |
+| 50           | 40             |
+
+The function receives an array of coin denominations (e.g. `[1, 2, 2, 5, 10, 10]`)  
+and returns an object showing how many rolls and remaining coins exist for each denomination.
+
+### Example
+
+```ts
+calculateCoins([1, 2, 2, 5, 10, 10]);
+/*
+{
+  1:  { rolls: 0, rest: 1 },
+  2:  { rolls: 0, rest: 2 },
+  5:  { rolls: 0, rest: 1 },
+  10: { rolls: 0, rest: 2 },
+  20: { rolls: 0, rest: 0 },
+  50: { rolls: 0, rest: 0 },
+}
+*/
+
+### Technologies
+1. typesSript
+2. Jest(test)
+3. Node.js(runtime)
+
+### Installation & Usage
+
+1. Source: git clone https://github.com/janulewicz-and/MoneyCounting.git
+2. npm install (to install dependencies)
+3. npm test (to run tests)
+```
