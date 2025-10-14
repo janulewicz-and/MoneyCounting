@@ -83,6 +83,44 @@ describe("calculateCoins", () => {
       50: { rolls: 2, rest: 2 },
     });
   });
+  test("mixed quantities and non-existend denominations", () => {
+    expect(calculateCoins([1, 2, 3, 5, 5, 10, 10, 10, 20, 100, 200])).toEqual({
+      1: { rolls: 0, rest: 1 },
+      2: { rolls: 0, rest: 1 },
+      5: { rolls: 0, rest: 2 },
+      10: { rolls: 0, rest: 3 },
+      20: { rolls: 0, rest: 1 },
+      50: { rolls: 0, rest: 0 },
+    });
+  });
+  test("random denominations with rest", () => {
+    expect(calculateCoins([1, 3, 7, 10, 10, 50, 100, 2, 2, 2, 20])).toEqual({
+      "1": {
+        rolls: 0,
+        rest: 3,
+      },
+      "2": {
+        rolls: 0,
+        rest: 1,
+      },
+      "5": {
+        rolls: 0,
+        rest: 3,
+      },
+      "10": {
+        rolls: 0,
+        rest: 3,
+      },
+      "20": {
+        rolls: 0,
+        rest: 0,
+      },
+      "50": {
+        rolls: 0,
+        rest: 0,
+      },
+    });
+  });
   test("no full rolls, only rest", () => {
     expect(calculateCoins([1, 1, 2, 2, 2, 5, 10, 10, 20, 50, 50, 50])).toEqual({
       1: { rolls: 0, rest: 2 },
