@@ -2,7 +2,7 @@
 
 A simple TypeScript function that calculates how many coin rolls and remaining coins there are for each denomination.
 
-This project simulates how a waiter counts coins at the end of a shift before exchanging them for banknotes. You can customize the denominations and the number of coins per roll by modifying the coinPerRoll constant.
+This project simulates how a waiter counts coins at the end of a shift before exchanging them for banknotes. You can customize the denominations and the number of coins per roll by passing the coinPerRoll object as the second argument.
 
 ### Task
 
