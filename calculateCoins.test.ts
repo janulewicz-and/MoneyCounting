@@ -1,15 +1,15 @@
 import {
   Denomination,
-  coinsInfo,
-  bank,
+  CoinsInfo,
+  Bank,
   calculateCoins,
 } from "./calculateCoins";
 
 describe("calculateCoins", () => {
-  test("empty array, empty object", () => {
+  test("empty arrayOfCoinsay, empty object", () => {
     expect(calculateCoins([], {})).toEqual({});
   });
-  test("empty array", () => {
+  test("empty arrayOfCoinsay", () => {
     expect(() => calculateCoins([])).toThrow(
       "You must provide at least one denomination configuration"
     );
@@ -37,12 +37,12 @@ describe("calculateCoins", () => {
     expect(
       calculateCoins(
         [
-          ...Array(40).fill(1),
-          ...Array(40).fill(2),
-          ...Array(30).fill(5),
-          ...Array(50).fill(10),
-          ...Array(20).fill(20),
-          ...Array(40).fill(50),
+          ...arrayOfCoinsay(40).fill(1),
+          ...arrayOfCoinsay(40).fill(2),
+          ...arrayOfCoinsay(30).fill(5),
+          ...arrayOfCoinsay(50).fill(10),
+          ...arrayOfCoinsay(20).fill(20),
+          ...arrayOfCoinsay(40).fill(50),
         ],
         {
           1: 40,
@@ -66,12 +66,12 @@ describe("calculateCoins", () => {
     expect(
       calculateCoins(
         [
-          ...Array(43).fill(1),
-          ...Array(45).fill(2),
-          ...Array(31).fill(5),
-          ...Array(53).fill(10),
-          ...Array(25).fill(20),
-          ...Array(42).fill(50),
+          ...arrayOfCoinsay(43).fill(1),
+          ...arrayOfCoinsay(45).fill(2),
+          ...arrayOfCoinsay(31).fill(5),
+          ...arrayOfCoinsay(53).fill(10),
+          ...arrayOfCoinsay(25).fill(20),
+          ...arrayOfCoinsay(42).fill(50),
         ],
         {
           1: 40,
@@ -95,12 +95,12 @@ describe("calculateCoins", () => {
     expect(
       calculateCoins(
         [
-          ...Array(85).fill(1),
-          ...Array(95).fill(2),
-          ...Array(62).fill(5),
-          ...Array(120).fill(10),
-          ...Array(55).fill(20),
-          ...Array(82).fill(50),
+          ...arrayOfCoinsay(85).fill(1),
+          ...arrayOfCoinsay(95).fill(2),
+          ...arrayOfCoinsay(62).fill(5),
+          ...arrayOfCoinsay(120).fill(10),
+          ...arrayOfCoinsay(55).fill(20),
+          ...arrayOfCoinsay(82).fill(50),
         ],
         {
           1: 40,

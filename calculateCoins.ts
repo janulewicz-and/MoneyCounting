@@ -1,39 +1,36 @@
 export type Denomination = number;
 
-export interface coinsInfo {
+export interface CoinsInfo {
   rolls: number;
   rest: number;
 }
 
-export type bank = Record<Denomination, coinsInfo>;
+export type Bank = Record<Denomination, CoinsInfo>;
 
 export function calculateCoins(
-  arr: Denomination[],
-  coinPerRoll?: Record<Denomination, number>
-): bank | {} {
-  if (!coinPerRoll) {
+  arrayOfCoins: Denomination[],
+  coinPerRoll: Record<Denomination, number>
+): Bank | {} {
+  if (!coinPerRoll || Object.keys(coinPerRoll).length === 0) {
     throw new Error("You must provide at least one denomination configuration");
   }
-  if (Object.keys(coinPerRoll).length === 0) {
-    return {} as bank;
-  }
-  const zeroValue: Record<Denomination, number> = Object.keys(
+  const initialValue: Record<Denomination, number> = Object.keys(
     coinPerRoll
   ).reduce((acc, key) => {
     acc[Number(key)] = 0;
     return acc;
   }, {} as Record<Denomination, number>);
 
-  arr.forEach((coin) => {
+  arrayOfCoins.forEach((coin) => {
     if (coinPerRoll[coin] !== undefined) {
-      zeroValue[coin] += 1;
+      initialValue[coin] += 1;
     }
   });
-  const result = Object.fromEntries(
+  const result: Bank = Object.fromEntries(
     Object.keys(coinPerRoll).map((key) => [Number(key), { rolls: 0, rest: 0 }])
-  ) as bank;
+  );
 
-  Object.entries(zeroValue).forEach(([key, amount]) => {
+  Object.entries(initialValue).forEach(([key, amount]) => {
     const denom = Number(key) as Denomination;
     const perRoll = coinPerRoll[denom];
     result[denom].rolls = Math.floor(amount / perRoll);
