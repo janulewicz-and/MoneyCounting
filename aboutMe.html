@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>HTML page</title>
+  </head>
+  <body>
+    <header>
+      <h1 style="font-size: 40px; text-align: center; color: red">
+        table about my skils
+      </h1>
+    </header>
+
+    <main>
+      <section aria-labelledby="skills-table-title">
+        <table border="1" cellpadding="5" cellspacing="0">
+          <caption id="skills-table-title">
+            My learning progress
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Topic</th>
+              <th scope="col">What I have understood</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>js</td>
+              <td>how to write code by js</td>
+              <td>01.07.2025</td>
+            </tr>
+            <tr>
+              <td>docker</td>
+              <td>how to create images and containers</td>
+              <td>01.09.2025</td>
+            </tr>
+            <tr>
+              <td>ts</td>
+              <td>how to add types to my js code</td>
+              <td>01.08.2025</td>
+            </tr>
+            <tr>
+              <td>git</td>
+              <td>how to write my coe and share it with others</td>
+              <td>01.10.2025</td>
+            </tr>
+            <tr>
+              <td>sql</td>
+              <td>how to create DB</td>
+              <td>01.02.2025</td>
+            </tr>
+            <tr>
+              <td>nodejs</td>
+              <td>how to run my code</td>
+              <td>01.02.2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="next-title">
+        <h2
+          id="next-title"
+          style="font-size: 40px; text-align: center; color: red"
+        >
+          What is next?
+        </h2>
+
+        <fieldset style="font-size: 25px; color: green">
+          <legend>Next topics to learn</legend>
+
+          <p>
+            <input type="checkbox" id="task-css" value="css" />
+            <label for="task-css">css</label>
+          </p>
+          <p>
+            <input type="checkbox" id="task-vue" value="vue" />
+            <label for="task-vue">vue</label>
+          </p>
+          <p>
+            <input type="checkbox" id="task-vite" value="vite" />
+            <label for="task-vite">vite</label>
+          </p>
+          <p>
+            <input type="checkbox" id="task-tests" value="tests" />
+            <label for="task-tests">tests</label>
+          </p>
+          <p>
+            <input type="checkbox" id="task-react" value="react" />
+            <label for="task-react">react</label>
+          </p>
+          <p>
+            <input type="checkbox" id="task-python" value="python" />
+            <label for="task-python">python</label>
+          </p>
+        </fieldset>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="links-title">
+        <h3
+          id="links-title"
+          style="font-size: 40px; text-align: center; color: red"
+        >
+          useful links
+        </h3>
+
+        <div style="font-size: 25px; color: rgb(148, 148, 215)">
+          <p>
+            <a href="https://www.typescriptlang.org/"
+              >TypeScript is JavaScript with syntax for types.</a
+            >
+          </p>
+          <p><a href="https://nodejs.org/en">nodejs dokumentation</a></p>
+          <p><a href="https://www.docker.com/">Docker official page</a></p>
+          <p>
+            <a href="https://learn.javascript.ru/">JavaScript for biginers</a>
+          </p>
+          <p><a href="https://github.com/">GITHUB official page</a></p>
+        </div>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="form-title">
+        <h4
+          id="form-title"
+          style="font-size: 40px; text-align: center; color: red"
+        >
+          add new topic
+        </h4>
+        <div>
+          <form style="color: black; font-size: 25px">
+            <p>
+              <label for="topic">Topic name</label><br />
+              <input
+                id="topic"
+                style="font-size: 22px"
+                type="text"
+                name="topic"
+                required
+              />
+            </p>
+            <p>
+              <label for="short-desriptions">Short desriptions</label><br />
+              <input
+                id="short-desriptions"
+                style="font-size: 22px"
+                type="text"
+                name="short-desriptions"
+                required
+              />
+            </p>
+            <p>
+              <label for="date">Date</label><br />
+              <input
+                id="date"
+                style="font-size: 22px"
+                type="text"
+                name="date"
+                required
+              />
+            </p>
+            <p>
+              <button
+                type="submit"
+                style="color: red; font-size: 20px; text-align: center"
+              >
+                Send to Vlad
+              </button>
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <hr />
+
+      <h5 style="font-size: 30px; text-align: center; color: red">
+        Created by
+      </h5>
+    </main>
+
+    <footer>
+      Andrzej Janulewich 22.10.2025
+      <a href="https://github.com/janulewicz-and">GITHUB</a>
+    </footer>
+  </body>
+</html>
